@@ -40,7 +40,7 @@ exports.findOne = async (req, res, next) => {
     if (!document) {
       return next(new ApiError(404, "Contact not found"));
     }
-    return res.send(document);
+    return res.status(200).send(document);
   } catch (err) {
     return next(
       new ApiError(500, "Error retirving contact with id " + req.params.id)
